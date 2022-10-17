@@ -4,7 +4,7 @@
 
             require_once 'Corredor.php';
 
-            class Competicion extends Corredor{
+            class Competicion{
                 private $corredor;
                 private $contMedia = 0;
                 private $tiempoMasRapido = 0;
