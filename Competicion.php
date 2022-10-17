@@ -6,9 +6,6 @@
 
             class Competicion{
                 private $corredor;
-                private $contMedia = 0;
-                private $tiempoMasRapido = 0;
-                private $corredorMasRapido;
 
                 function __construct(){
                     $this->corredor = [];
@@ -25,6 +22,7 @@
                 }
 
                 function tiempoMedioPrimeraCarrera(){
+                    $contMedia = 0;
                     for ($i = 1; $i <= count($this->corredor); $i++) { 
                         $this->contMedia = $this->contMedia + $this->corredor[$i]->getDuracionCarreras()[0];
                     }
@@ -32,6 +30,8 @@
                 }
 
                 function corredorMasRapido(){
+                    $corredorMasRapido;
+                    $tiempoMasRapido = 0;
                     for ($i = 1; $i <= count($this->corredor); $i++) { 
                        if(max($this->corredor[$i]->getDuracionCarreras()) > $this->tiempoMasRapido){
                             $this->tiempoMasRapido = max($this->corredor[$i]->getDuracionCarreras());
