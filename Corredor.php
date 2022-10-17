@@ -3,7 +3,6 @@
         <?php
 
             require_once 'Competicion.php';
-            require_once 'Pruebas.php';
 
             class Corredor{
                 private $nombre;

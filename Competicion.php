@@ -3,7 +3,6 @@
         <?php
 
             require_once 'Corredor.php';
-            require_once 'Pruebas.php';
 
             class Competicion extends Corredor{
                 private $corredor;
