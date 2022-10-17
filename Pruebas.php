@@ -27,6 +27,7 @@
 
             echo $competicion1->tiempoMedioPrimeraCarrera();
             echo $competicion1->corredorMasRapido();
+            echo $competicion1->corredorMuchoMasRapido();
 
         ?>
     </body>
