@@ -24,22 +24,24 @@
                 function tiempoMedioPrimeraCarrera(){
                     $contMedia = 0;
                     for ($i = 1; $i <= count($this->corredor); $i++) { 
-                        $this->contMedia = $this->contMedia + $this->corredor[$i]->getDuracionCarreras()[0];
+                        $contMedia = $contMedia + $this->corredor[$i]->getDuracionCarreras()[0];
                     }
-                    return "La media de la primera carrera es de : " .$this->contMedia / count($this->corredor). " segundos <br>";
+                    return "La media de la primera carrera es de : " .$contMedia / count($this->corredor). " segundos <br>";
                 }
 
                 function corredorMasRapido(){
-                    $corredorMasRapido;
+                    $corredorMasRapido = "";
                     $tiempoMasRapido = 0;
                     for ($i = 1; $i <= count($this->corredor); $i++) { 
-                       if(max($this->corredor[$i]->getDuracionCarreras()) > $this->tiempoMasRapido){
-                            $this->tiempoMasRapido = max($this->corredor[$i]->getDuracionCarreras());
-                            $this->corredorMasRapido = $this->corredor[$i];
+                       if(max($this->corredor[$i]->getDuracionCarreras()) > $tiempoMasRapido){
+                            $tiempoMasRapido = max($this->corredor[$i]->getDuracionCarreras());
+                            $corredorMasRapido = $this->corredor[$i];
                        }
                     }
-                    return "El corredor mas rapido es " .$this->corredorMasRapido->getNombre(). " con un tiempo de " .$this->tiempoMasRapido. " segundos<br>";
+                    return "El corredor mas rapido es " .$corredorMasRapido->getNombre(). " con un tiempo de " .$tiempoMasRapido. " segundos<br>";
                 }
+
+
             }   
         ?>
     </body>
