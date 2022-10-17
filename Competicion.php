@@ -43,19 +43,24 @@
 
                 function corredorMuchoMasRapido(){
                     $corredores = [];
-                    $contador = 0;
-                    for ($i= 1; $i < count($this->corredor); $i++) { 
-                        if ($this->corredor[$i]->getDuracionCarreras() > 15) {
-                            $contador++;
-                            if ($contador === 2){
-                                $corredores = [$this->corredor[$i]->getNombre()];
-                            }
+                    for ($i= 1; $i <= count($this->corredor); $i++) { 
+                        if (max($this->corredor[$i]->getDuracionCarreras()) >= 15) {
+                            array_push($corredores, $this->corredor[$i]->getNombre());
                         }
-                    }
-                    return "Los corredores que tienen dos carreras con mas de 15 segundos son: " .$corredores[0]. "<br>";
+                    } 
+                    return $corredores;
                 }
 
-                
+                function nombreTerminaEnE(){
+                    $terminaE = [];
+                    for ($i= 1; $i <= count($this->corredor); $i++) { 
+                        if(substr($this->corredor[$i]->getNombre(), -1) === "e"){
+                            array_push($terminaE, $this->corredor[$i]->getNombre());
+                        }
+                    }
+                    return $terminaE;
+            
+                }
             }   
         ?>
     </body>
